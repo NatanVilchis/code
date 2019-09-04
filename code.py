@@ -1,6 +1,6 @@
 #coding: utf-8
-import sys
 import os
+
 global semilla, a, c, m
 
 semilla=input("Semilla: ")
@@ -13,6 +13,11 @@ a=int(eval(input("a: ")))
 c=int(eval(input("c: ")))
 steps=int(eval(input("steps: ")))
 n=int(input("n: "))
+OS_choices=["desktop","termux"]
+OS=""
+while not OS in OS_choices:
+	OS=input("desktop|termux: ")
+
 def aleatorio():
 	global semilla, a, c,m
 	semilla=(a*semilla+c)%m
@@ -27,4 +32,8 @@ for i in range(n):
 	txt.write(temp_char)
 	x+=1
 txt.close()
-#os.system("xclip -sel cli < .localkey")
+if OS=="termux":
+	os.system("cat .localkey | termux-clipboard-set")
+else:
+	os.system("xclip -sel cli < .localkey")
+os.remove(".localkey")
