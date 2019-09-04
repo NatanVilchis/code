@@ -1,14 +1,15 @@
 #coding: utf-8
+import sys
 global semilla, a, c, m
 
-semilla=""
+semilla=input("Semilla: ")
 temp=""
 for letra in semilla:
 	temp+=str(ord(letra))
 semilla=int(temp)
-m=1
-a=2
-c=3
+m=int(eval(input("m: ")))
+a=int(eval(input("a: ")))
+c=int(eval(input("c: ")))
 
 def aleatorio():
 	global semilla, a, c,m
