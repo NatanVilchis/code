@@ -13,7 +13,7 @@ a=int(eval(input("a: ")))
 c=int(eval(input("c: ")))
 steps=int(eval(input("steps: ")))
 n=int(input("n: "))
-OS_choices=["desktop","termux"]
+OS_choices=["desktop","termux","d","t"]
 OS=""
 while not OS in OS_choices:
 	OS=input("desktop|termux: ")
