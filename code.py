@@ -1,4 +1,5 @@
 #coding: utf-8
+
 import os
 import platform
 global semilla, a, c, m
@@ -8,6 +9,8 @@ semilla = input("Semilla: ")
 temp = ""
 for letra in semilla:
   temp += str(ord(letra))
+
+
 
 semilla = int(temp)
 m = int(eval(input("m: ")))
