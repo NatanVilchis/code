@@ -42,6 +42,10 @@ if platform.uname().system == "Linux":
     os.system("xclip -sel cli < .localkey")
   elif platform.uname().machine == "aarch64":
     os.system("cat .localkey | termux-clipboard-set")
+  else:
+    print("Not supported",platform.uname())
 elif platform.uname().system == "Windows":
   os.system("echo " + temp + "| clip")
+else:
+  print("Not supported",platform.uname())
 os.remove(".localkey")
