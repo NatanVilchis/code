@@ -3,10 +3,6 @@ import os
 import platform
 global semilla, a, c, m
 
-OS = {
-  "Linux": "xclip -sel cli < .localkey",
-  ""   
-}
 
 semilla = input("Semilla: ")
 temp = ""
