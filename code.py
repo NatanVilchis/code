@@ -2,10 +2,11 @@
 
 import os
 import platform
+import getpass
 global semilla, a, c, m
 
 
-semilla = input("Semilla: ")
+semilla = getpass.getpass("Semilla: ")
 temp = ""
 for letra in semilla:
   temp += str(ord(letra))
@@ -13,11 +14,11 @@ for letra in semilla:
 
 
 semilla = int(temp)
-m = int(eval(input("m: ")))
-a = int(eval(input("a: ")))
-c = int(eval(input("c: ")))
-steps = int(eval(input("steps: ")))
-n = int(input("n: "))
+m = int(eval(getpass.getpass("m: ")))
+a = int(eval(getpass.getpass("a: ")))
+c = int(eval(getpass.getpass("c: ")))
+steps = int(eval(getpass.getpass("steps: ")))
+n = int(getpass.getpass("n: "))
 
 def aleatorio():
   global semilla, a, c,m
