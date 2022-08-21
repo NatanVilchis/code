@@ -4,8 +4,13 @@ import platform
 import getpass
 global semilla, a, c, m
 
+res = input("¿Hidden? (Y/N)?: ").lower()
+if res == "y":
+  F = getpass.getpass
+else:
+  F = input 
 
-semilla = getpass.getpass("Semilla: ")
+semilla = F("Semilla: ")
 temp = ""
 for letra in semilla:
   temp += str(ord(letra))
@@ -13,11 +18,11 @@ for letra in semilla:
 
 
 semilla = int(temp)
-m = int(eval(getpass.getpass("m: ")))
-a = int(eval(getpass.getpass("a: ")))
-c = int(eval(getpass.getpass("c: ")))
-steps = int(eval(getpass.getpass("steps: ")))
-n = int(getpass.getpass("n: "))
+m = int(eval(F("m: ")))
+a = int(eval(F("a: ")))
+c = int(eval(F("c: ")))
+steps = int(eval(F("steps: ")))
+n = int(F("n: "))
 
 def aleatorio():
   global semilla, a, c,m
@@ -47,5 +52,6 @@ if platform.uname().system == "Linux":
 elif platform.uname().system == "Windows":
   os.system("echo " + temp + "| clip")
 else:
-  print("Not supported",platform.uname())
+  os.system("pbcopy < .localkey")
 os.remove(".localkey")
+
