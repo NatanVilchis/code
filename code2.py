@@ -12,10 +12,17 @@ else:
 
 seed = F("Semilla: ")
 n = int(F("n: "))
+version = int(F("version (1: unicode,2: ascii): "))
 
 random.seed(seed)
-tmp = "".join([chr(i) for i in random.choices(range(32,11001),k=n)])
-
+if version == 1:
+  end = 1001
+elif version == 2:
+  end = 127
+else:
+  exit()
+tmp = "".join([chr(i) for i in random.choices(range(32,end),k=n)])
+  
 txt = open(".localkey","w")
 txt.write(tmp)
 txt.close()
