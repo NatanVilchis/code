@@ -16,7 +16,7 @@ version = int(F("version (1: unicode,2: ascii): "))
 
 random.seed(seed)
 if version == 1:
-  end = 1001
+  end = 11001
 elif version == 2:
   end = 127
 else:
